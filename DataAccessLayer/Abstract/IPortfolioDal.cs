@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    internal interface IPortfolioDal:IGenericDal<Portfolio>
+    public interface IPortfolioDal:IGenericDal<Portfolio>
     {
     }
 }

@@ -1,0 +1,51 @@
+﻿@using EntityLayer.Concrete
+@model List<Experience>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+
+	<h3 class="mb-0"></h3>
+
+</div>
+<!-- Light table -->
+<div class="table-responsive">
+	<table class="table align-items-center table-flush">
+		<thead class="thead-light">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Name</th>
+				<th scope="col">Date</th>
+				<th scope="col">Delete</th>
+				<th scope="col">Update</th>
+				
+			</tr>
+		</thead>
+		<tbody class="list">
+
+			@foreach (var item in Model)
+			{
+				<tr>
+					<th>
+						@item.ExperienceID
+					</th>
+					<td>
+						@item.Name
+					</td>
+						
+					<td>
+						@item.Date.Year.ToString()
+					</td>
+					<td><a href="/Experience/DeleteExperience/@item.ExperienceID" class="btn btn-danger">Delete</a></td>
+					<td><a href="/Experience/EditExperience/@item.ExperienceID" class="btn btn-info">Update</a></td>
+				</tr>
+			}
+		</tbody>
+	</table>
+	<a href="/Experience/AddExperience" class="btn btn-primary">Add New Experience</a>
+
+
+</div>
+
