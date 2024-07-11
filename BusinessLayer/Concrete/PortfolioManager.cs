@@ -22,7 +22,7 @@ namespace BusinessLayer.Concrete
         {
             _portfolioDal.Insert(t);
         }
-        //aa
+        //a
 
         public void TDelete(Portfolio t)
         {
