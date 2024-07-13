@@ -1,0 +1,76 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-xl-8 order-xl-1">
+    <div class="card">
+        <div class="card-header">
+            <div class="row align-items-center">
+                <div class="col-8">
+                    <h3 class="mb-0">Editting About</h3>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm("Index", "About", FormMethod.Post))
+            {
+                @Html.HiddenFor(x => x.AboutID)
+                <h6 class="heading-small text-muted mb-4">User information</h6>
+                <div class="pl-lg-4">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label" for="input-value">Name</label>
+                                @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Name" })
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label" for="input-value">Age</label>
+                                @Html.TextBoxFor(x => x.Age, new { @class = "form-control", @placeholder = "Age" })
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label" for="input-value">Mail</label>
+                                @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", @placeholder = "Mail" })
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label" for="input-value">Phone</label>
+                                @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", @placeholder = "Phone" })
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label" for="input-value">Address</label>
+                                @Html.TextBoxFor(x => x.Address, new { @class = "form-control", @placeholder = "Address" })
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label" for="input-value">ImageUrl</label>
+                                @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control", @placeholder = "ImageUrl" })
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label" for="input-value">Description</label>
+                                @Html.TextAreaFor(x => x.Description, 10, 2, new { @class = "form-control", @placeholder = "Description" })
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <button type="submit" class="btn btn-primary">Update It!</button>
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

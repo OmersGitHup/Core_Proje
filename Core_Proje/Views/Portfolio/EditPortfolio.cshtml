@@ -1,6 +1,6 @@
 ﻿@model EntityLayer.Concrete.Portfolio
 @{
-    ViewData["Title"] = "AddExperience";
+    ViewData["Title"] = "EditPortfolio";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -9,13 +9,13 @@
         <div class="card-header">
             <div class="row align-items-center">
                 <div class="col-8">
-                    <h3 class="mb-0">Add Portfolio</h3>
+                    <h3 class="mb-0">Update Portfolio</h3>
                 </div>
             </div>
         </div>
         <div class="card-body">
-            @using (Html.BeginForm("AddPortfolio", "Portfolio", FormMethod.Post))
-            {
+            @using (Html.BeginForm("EditPortfolio", "Portfolio", FormMethod.Post))
+            {   @Html.HiddenFor(x=>x.PortfolioID)
                 <h6 class="heading-small text-muted mb-4">User information</h6>
                 <div class="pl-lg-4">
                     <div class="row">
@@ -23,14 +23,14 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-title">Name</label>
                                 @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @placeholder = "Name" })
-                                @Html.ValidationMessageFor(x=>x.Name)
+                                @Html.ValidationMessageFor(x => x.Name)
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="form-control-label" for="input-value">Images1</label>
                                 @Html.TextBoxFor(x => x.Images1, new { @class = "form-control", @placeholder = "Images1" })
-                               
+
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -90,7 +90,13 @@
                                 @Html.TextBoxFor(x => x.ProjectUrl, new { @class = "form-control", @placeholder = "ProjectUrl" })
                             </div>
                         </div>
-                        
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label" for="input-value">Status</label>
+                                @Html.TextBoxFor(x => x.Status, new { @class = "form-control", @placeholder = "Status" })
+                            </div>
+                        </div>
+
                     </div>
                     <button type="submit" class="btn btn-primary">Save It!</button>
                 </div>

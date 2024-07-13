@@ -16,10 +16,11 @@
                         <tr>
                             <th scope="col" class="sort" data-sort="name">Project</th>
                             <th scope="col" class="sort" data-sort="budget">Price</th>
-                            <th scope="col" class="sort" data-sort="status">Status</th>
-                            <th scope="col">Images</th>
+                            <th scope="col" class="sort" data-sort="status">Status</th>          
                             <th scope="col" class="sort">Percentage</th>
                             <th scope="col"></th>
+                            <th scope="col" class="sort">Delete</th>
+                            <th scope="col">Update</th>
                         </tr>
                     </thead>
                     <tbody class="list">
@@ -45,22 +46,7 @@
                                         <span class="status">@item.Status</span>
                                     </span>
                                 </td>
-                                <td>
-                                    <div class="avatar-group">
-                                        <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Ryan Tompson">
-                                            <img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-1.jpg">
-                                        </a>
-                                        <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Romina Hadid">
-                                            <img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-2.jpg">
-                                        </a>
-                                        <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Alexander Smith">
-                                            <img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-3.jpg">
-                                        </a>
-                                        <a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip" data-original-title="Jessica Doe">
-                                            <img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-4.jpg">
-                                        </a>
-                                    </div>
-                                </td>
+                              
                                 <td>
                                     <div class="d-flex align-items-center">
                                         <span class="completion mr-2">@item.Value%</span>
@@ -83,14 +69,20 @@
                                         </div>
                                     </div>
                                 </td>
+                                <td>@Html.ActionLink("Delete", "DeletePortfolio", new { id = item.PortfolioID }, new { @class = "btn btn-outline-danger", onclick = "return confirm('Are you sure would you like to delete it ?')" })</td>
+                                
+                                <td><a href="/Portfolio/EditPortfolio/@item.PortfolioID" class="btn btn-outline-info">Update</a></td>
                             </tr>
                         }
+
                         
                        
                     </tbody>
                 </table>
-                <a href="/Portfolio/AddPortfolio/">Add New Project Here !</a>
+                
             </div>
+            
         </div>
+        <a class="btn btn-primary" href="/Portfolio/AddPortfolio/">Add New Project Here !</a>
     </div>
 </div>
