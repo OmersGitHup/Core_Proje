@@ -25,12 +25,12 @@ namespace BusinessLayer.Concrete
 
 		public void TDelete(Service t)
 		{
-			throw new NotImplementedException();
+			_serviceDal.Delete(t);
 		}
 
 		public Service TGetByID(int id)
 		{
-			throw new NotImplementedException();
+			return _serviceDal.GetById(id);
 		}
 
 		public List<Service> TGetList()
@@ -40,7 +40,7 @@ namespace BusinessLayer.Concrete
 
 		public void TUpdate(Service t)
 		{
-			throw new NotImplementedException();
+			_serviceDal.Update(t);
 		}
 	}
 }

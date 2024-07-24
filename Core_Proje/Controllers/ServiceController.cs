@@ -26,5 +26,45 @@ namespace Core_Proje.Controllers
             return RedirectToAction("Index", "Default");
 
         }
-    }
+
+		[HttpGet]
+		public IActionResult AddService()
+		{
+			ViewBag.v1 = "Service";
+			ViewBag.v2 = "AddService";
+			ViewBag.v3 = "Add";
+			return View();
+		}
+		[HttpPost]
+		public IActionResult AddService(Service service)
+		{
+			_serviceManager.TAdd(service);
+			return RedirectToAction("Index");
+		}
+		public IActionResult DeleteService(int id)
+		{
+			var values = _serviceManager.TGetByID(id);
+			_serviceManager.TDelete(values);
+			return RedirectToAction("Index");
+		}
+
+		[HttpGet]
+		public IActionResult EditService(int id)
+		{
+			ViewBag.v1 = "Service";
+			ViewBag.v2 = "Update";
+			ViewBag.v3 = "Service";
+			var values = _serviceManager.TGetByID(id);
+			return View(values);
+
+		}
+		[HttpPost]
+		public IActionResult EditService(Service service)
+		{
+
+			_serviceManager.TUpdate(service);
+			return RedirectToAction("Index");
+
+		}
+	}
 }
