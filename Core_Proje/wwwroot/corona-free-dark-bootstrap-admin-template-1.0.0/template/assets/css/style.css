@@ -2831,6 +2831,21 @@
     -ms-transform: translateY(0);
     -o-transform: translateY(0);
     transform: translateY(0); } }
+.progress-bar-success {
+    background-color: #28a745; /* Yeþil */
+}
+
+.progress-bar-warning {
+    background-color: #ffc107; /* Sarý */
+}
+
+.progress-bar-info {
+    background-color: #17a2b8; /* Mavi */
+}
+
+.progress-bar-danger {
+    background-color: #dc3545; /* Kýrmýzý */
+}
 
 @-o-keyframes bounceInUp {
   0% {

@@ -12,7 +12,7 @@ namespace BusinessLayer.Concrete
     public class FeatureManager : IGenericService<Feature>
     {
         IFeatureDal _featureDal;
-public FeatureManager(IFeatureDal featureDal)
+        public FeatureManager(IFeatureDal featureDal)
         {
             _featureDal = featureDal;
         }

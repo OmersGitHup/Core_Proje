@@ -2740,10 +2740,9 @@ pre code
     color: #adb5bd;
 }
 .form-control:disabled,
-.form-control[readonly]
-{
-    opacity: 1; 
-    background-color: #e9ecef;
+.form-control[readonly] {
+    opacity: 1;
+    background-color: #ffffff;
 }
 
 select.form-control:focus::-ms-value

@@ -1,52 +1,38 @@
 ﻿@model EntityLayer.Concrete.Experience
 @{
-    ViewData["Title"] = "AddExperience";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+	ViewData["Title"] = "AddExperience";
+	Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<div class="col-xl-8 order-xl-1">
-    <div class="card">
-        <div class="card-header">
-            <div class="row align-items-center">
-                <div class="col-8">
-                    <h3 class="mb-0">Add Experience</h3>
-                </div>
+@using (Html.BeginForm("EditExperience", "Experience", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">@ViewBag.v1</h4>
+                <p class="card-description"> @ViewBag.v2 </p>
+                <form class="forms-sample" method="post">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" id="exampleInputName1" asp-for="Name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="text" class="form-control" id="datepicker" asp-for="Date" placeholder="dd/mm/yyyy">
+                    </div>
+                    <div class="form-group">
+                        <label>Image URL</label>
+                        <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Image URL">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" name="Description" asp-for="Description" rows="6"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <a class="btn btn-dark" href="/Experience/Index/">Cancel</a>
+                </form>
             </div>
         </div>
-        <div class="card-body">
-            @using (Html.BeginForm("EditExperience", "Experience", FormMethod.Post))
-            {        
-                <h6 class="heading-small text-muted mb-4">User information</h6>
-                <div class="pl-lg-4">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="input-title">Name</label>
-                                @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @placeholder = "Title" })
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="input-value">Date</label>
-                                @Html.TextBoxFor(x => x.Date, new { @class = "form-control", @placeholder = "Value" })
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="input-value">Image URL</label>
-                                @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control", @placeholder = "Value" })
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="input-value">Description</label>
-                                @Html.TextAreaFor(x => x.Description,10,3, new { @class = "form-control", @placeholder = "Value" })
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Save It!</button>
-                </div>
-            }
-        </div>
     </div>
-</div>
+}
+
