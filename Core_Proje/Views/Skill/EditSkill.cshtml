@@ -1,41 +1,34 @@
 ﻿@model EntityLayer.Concrete.Skill
 @{
     ViewData["Title"] = "EditSkill";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<div class="col-xl-8 order-xl-1">
-    <div class="card">
-        <div class="card-header">
-            <div class="row align-items-center">
-                <div class="col-8">
-                    <h3 class="mb-0">Edit Skill</h3>
-                </div>
+
+@using (Html.BeginForm("EditSkill", "Skill", FormMethod.Post))
+{
+
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">@ViewBag.v1</h4>
+                <p class="card-description"> @ViewBag.v2 </p>
+                <form class="forms-sample">
+                    @Html.HiddenFor(x => x.SkillID)
+
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control" id="exampleInputName1" asp-for="Title" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                        <label>Value</label>
+                        <input type="number" class="form-control" asp-for="Value" placeholder="Value">
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <a class="btn btn-dark" href="/Skill/Index/">Cancel</a>
+                </form>
+
             </div>
         </div>
-        <div class="card-body">
-            @using (Html.BeginForm("EditSkill", "Skill", FormMethod.Post))
-            {
-                @Html.HiddenFor(x => x.SkillID)
-                <h6 class="heading-small text-muted mb-4">User information</h6>
-                <div class="pl-lg-4">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="input-title">Title</label>
-                                @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Title" })
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="input-value">Value</label>
-                                @Html.TextBoxFor(x => x.Value, new { @class = "form-control", @placeholder = "Value" })
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Update It!</button>
-                </div>
-            }
-        </div>
     </div>
-</div>
+}

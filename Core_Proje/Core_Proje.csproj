@@ -119,4 +119,8 @@
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\NewAdmin\" />
+  </ItemGroup>
+
 </Project>
