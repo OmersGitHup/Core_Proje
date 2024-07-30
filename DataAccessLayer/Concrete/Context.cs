@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class Context:IdentityDbContext
+    public class Context : IdentityDbContext<WriterUser, WriterRole, int>
     {
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("server=DESKTOP-6JPMHUC\\SQLSERVERFIRST;database=CoreProjeDB;integrated security=true");
@@ -25,11 +26,13 @@ namespace DataAccessLayer.Concrete
         public DbSet<Portfolio> Porfolios { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Skill> Skills { get; set; }
-        public DbSet<SocialMedia> SocialMedias   { get; set; }
-        public DbSet<Testimonial> Testimonials   { get; set; }
-		public DbSet<User> Users { get; set; }
-		public DbSet<UserMessage> UserMessages { get; set; }
-		public DbSet<ToDoList> ToDoLists { get; set; }
+        public DbSet<SocialMedia> SocialMedias { get; set; }
+        public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserMessage> UserMessages { get; set; }
+        public DbSet<ToDoList> ToDoLists { get; set; }
+        public DbSet<Test1> test1s { get; set; }
 
-	}
+
+    }
 }
