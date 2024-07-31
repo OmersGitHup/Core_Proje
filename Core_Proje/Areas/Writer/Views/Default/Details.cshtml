@@ -1,0 +1,41 @@
+﻿@model EntityLayer.Concrete.Announcement
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+@* 
+<h1>Details</h1>
+<form class="form-group">
+    @Html.Label("ID")
+    @Html.TextBoxFor(x=>x.AnnouncementID)
+    <br />
+    @Html.Label("Content")
+    @Html.TextAreaFor(x => x.Content,10,3,new {@class="form-control"})
+</form>
+ *@
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Detail</h4>
+            <p class="card-description">
+                Announcement Detail
+            </p>
+            <form class="forms-sample">
+                <div class="form-group">
+                    <label for="exampleInputName1">AnnouncementID</label>
+                    <input type="text" name="AnnouncementID" asp-for="AnnouncementID" class="form-control" id="exampleInputName1" placeholder="Name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleTextarea1">Textarea</label>
+                    <textarea class="form-control" name="Content" asp-for="Content" id="exampleTextarea1" rows="4"></textarea>
+                </div>
+                
+                <a class="btn btn-light" href="/Writer/Default/Index/">Back</a>
+            </form>
+        </div>
+    </div>
+</div>
