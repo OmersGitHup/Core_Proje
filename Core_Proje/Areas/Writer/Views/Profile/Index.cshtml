@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Core_Proje.Areas.Writer.Models.UserEditViewModel
+@{
 	ViewData["Title"] = "Index";
 	Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
@@ -10,14 +11,14 @@
 			<p class="card-description">
 
 			</p>
-			<form class="forms-sample">
+			<form method="post" enctype="multipart/form-data" class="forms-sample">
 				<div class="form-group">
 					<label for="exampleInputName1">Name</label>
-					<input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+					<input type="text" asp-for="Name"  class="form-control" id="exampleInputName1" placeholder="Name">
 				</div>
 				<div class="form-group">
 					<label for="exampleInputName1">Surname</label>
-					<input type="text" class="form-control" id="exampleInputName2" placeholder="Surname">
+					<input type="text" asp-for="Surname"  class="form-control" id="exampleInputName2" placeholder="Surname">
 				</div>
 				
 				<div class="form-group">
@@ -30,17 +31,29 @@
 				</div>
 				<div class="form-group">
 					<label>File upload</label>
-					<input type="file" name="img[]" class="file-upload-default">
-					<div class="input-group col-xs-12">
+					<input type="file" asp-for="Picture" >
+					@* <div class="input-group col-xs-12">
 						<input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
 						<span class="input-group-append">
 							<button class="file-upload-browse btn btn-primary" type="button">Upload</button>
 						</span>
-					</div>
+					</div> *@
 				</div>
 				<button type="submit" class="btn btn-primary mr-2">Submit</button>
-				<aa class="btn btn-light">Cancel</aa>
+				<a class="btn btn-light">Cancel</aa>
 			</form>
 		</div>
 	</div>
 </div>
+
+@* <div class="form-group">
+	<label>File upload</label>
+	<input type="file" name="img[]" class="file-upload-default">
+	<div class="input-group col-xs-12">
+		<input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+		<span class="input-group-append">
+			<button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+		</span>
+	</div>
+</div>
+ *@

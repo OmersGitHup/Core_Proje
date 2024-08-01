@@ -11,7 +11,7 @@ namespace Core_Proje.Areas.Writer.Controllers
 	public class DefaultController : Controller
     {
         AnnouncementManager announcementManager = new AnnouncementManager(new EfAnnouncementDal());
-
+       
         public IActionResult Index()
 		{
            var values=announcementManager.TGetList();
