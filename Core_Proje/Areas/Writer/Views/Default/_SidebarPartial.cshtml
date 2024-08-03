@@ -6,39 +6,49 @@
 				<span class="menu-title">Dashboard</span>
 			</a>
 		</li>
-
 		<li class="nav-item">
-			<a class="nav-link"  href="/Writer/Message/Index/">
-				<i class="icon-layout menu-icon"></i>
+			<a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+				<i class="ti-notepad menu-icon"></i>
 				<span class="menu-title">Messages</span>
-
+				<i class="menu-arrow"></i>
 			</a>
+			<div class="collapse" id="form-elements">
+				<ul class="nav flex-column sub-menu">
+					<li class="nav-item"><a class="nav-link" href="/Writer/Message/ReceiverMessage/">INBOX</a></li>
+				</ul>
+				<ul class="nav flex-column sub-menu">
+					<li class="nav-item"><a class="nav-link" href="/Writer/Message/SenderMessage/">SENT</a></li>
+				</ul>
+				<ul class="nav flex-column sub-menu">
+					<li class="nav-item"><a class="nav-link" href="/Writer/Message/SentMessage/">COMPOSE</a></li>
+				</ul>
+			</div>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link"  href="/Writer/Profile/Index/">
-				<i class="icon-columns menu-icon"></i>
+			<a class="nav-link" href="/Writer/Profile/Index/">
+				<i class="ti-microphone menu-icon"></i>
 				<span class="menu-title">Profile</span>
 
 			</a>
-
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="/Writer/Default/Index/">
-				<i class="icon-bar-graph menu-icon"></i>
+				<i class="ti-announcement menu-icon"></i>
 				<span class="menu-title">Announcement</span>
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="#error">
-				<i class="icon-ban menu-icon"></i>
-				<span class="menu-title">Exit</span>
-			</a>
-		</li>
-		<li class="nav-item">
 			<a class="nav-link" href="~/skydash/pages/documentation/documentation.html">
-				<i class="icon-paper menu-icon"></i>
+				<i class="ti-settings menu-icon"></i>
 				<span class="menu-title">Settings</span>
 			</a>
 		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#error">
+				<i class="ti-power-off menu-icon"></i>
+				<span class="menu-title">Exit</span>
+			</a>
+		</li>
+		
 	</ul>
 </nav>

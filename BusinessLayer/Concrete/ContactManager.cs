@@ -38,7 +38,12 @@ namespace BusinessLayer.Concrete
            return _contactDal.GetList();
         }
 
-        public void TUpdate(Contact t)
+		public List<Contact> TGetListbyFilter()
+		{
+			throw new NotImplementedException();
+		}
+
+		public void TUpdate(Contact t)
         {
             throw new NotImplementedException();
         }

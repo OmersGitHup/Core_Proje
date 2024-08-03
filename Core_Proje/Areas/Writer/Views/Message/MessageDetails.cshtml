@@ -1,0 +1,52 @@
+﻿@model EntityLayer.Concrete.WriterMessage
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+@*
+<h1>Details</h1>
+<form class="form-group">
+    @Html.Label("ID")
+    @Html.TextBoxFor(x=>x.AnnouncementID)
+    <br />
+    @Html.Label("Content")
+    @Html.TextAreaFor(x => x.Content,10,3,new {@class="form-control"})
+</form>
+ *@
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Detail</h4>
+            <p class="card-description">
+                Message Details
+            </p>
+            <form class="forms-sample">
+                <div class="form-group">
+                    <input type="hidden" name="WriterMessageID" asp-for="WriterMessageID" class="form-control" id="WriterMessageID">
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea1">SenderName</label>
+                    <input class="form-control" name="SenderName" asp-for="SenderName" id="SenderName"></input>
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea1">Sender</label>
+                    <input class="form-control" name="Sender" asp-for="Sender" id="SenderMail"></input>
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea1">Date</label>
+                    <input class="form-control" name="Date" asp-for="Date" id="Date"></input>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleTextarea1">Content</label>
+                    <textarea class="form-control" name="Content" asp-for="MessageContent" id="Content" rows="4"></textarea>
+                </div>
+
+                <a class="btn btn-light" href="/Writer/Default/Index/">Back</a>
+            </form>
+        </div>
+    </div>
+</div>
