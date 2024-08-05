@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Concrete.WriterMessage
+@{
+	ViewData["Title"] = "SendMessage";
+	Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+<div class="col-12 grid-margin stretch-card">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Detail</h4>
+			<p class="card-description">
+				Sent New Message Details
+			</p>
+			<form class="forms-sample" method="post">
+
+				<div class="form-group">
+					<label for="exampleTextarea1">Receiver Mail</label>
+					<input class="form-control" name="Receiver" asp-for="Receiver" id="Receiver"></input>
+				</div>
+				<div class="form-group">
+					<label for="exampleTextarea1">Subject</label>
+					<input class="form-control" name="Subject" asp-for="Subject" id="Subject"></input>
+				</div>
+
+				<div class="form-group">
+					<label for="exampleTextarea1">MessageContent</label>
+					<textarea class="form-control" name="MessageContent" asp-for="MessageContent" id="MessageContent" rows="4"></textarea>
+				</div>
+				<button class="btn btn-outline-primary">Sent</button>
+				<a class="btn btn-light" href="/Writer/Default/Index/">Back</a>
+			</form>
+		</div>
+	</div>
+</div>

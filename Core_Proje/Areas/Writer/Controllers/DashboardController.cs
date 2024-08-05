@@ -26,16 +26,16 @@ namespace Core_Proje.Areas.Writer.Controllers
 
 
             //Weather api
-            //string api = "14ad2aba611dbef9c504b82a127794c5";
-            //string connection = "https://api.openweathermap.org/data/2.5/weather?q=istanbul&mode=xml&lang=tr&units=metric&appid="+api;
-            //XDocument document= XDocument.Load(connection);
-            //ViewBag.weather = document.Descendants("temperature").ElementAt(0).Attribute("value").Value;
-           
+            string api = "66798b0838fb82e1c974a8aa3ec802bd";
+            string connection = "https://api.openweathermap.org/data/2.5/weather?q=istanbul&mode=xml&lang=tr&units=metric&appid=" + api;
+            XDocument document = XDocument.Load(connection);
+            ViewBag.weather = document.Descendants("temperature").ElementAt(0).Attribute("value").Value;
+
             //statistics
             Context c=new Context();
-            ViewBag.totalMessages = 0;
+            ViewBag.totalMessages = c.WriterMessages.Where(x=>x.Receiver==values.Email).Count();
             ViewBag.announcementTotal= c.Announcements.Count();
-            ViewBag.totalUsers = 0;
+            ViewBag.totalUsers = c.Users.Count();
             ViewBag.totalAbilities = c.Skills.Count();
             return View();
 		}
