@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Core_Proje.Areas.Writer.Controllers
 {
 	[Area("Writer")]
+	[Route("Writer/[controller]/[action]")]
 
 	public class ProfileController : Controller
 
@@ -24,6 +25,7 @@ namespace Core_Proje.Areas.Writer.Controllers
 			UserEditViewModel model = new UserEditViewModel();
 			model.Name = values.Name;
 			model.Surname=values.Surname;
+			
 			model.PictureURL=values.ImageURL;
 			return View(model);
 		}
@@ -43,10 +45,18 @@ namespace Core_Proje.Areas.Writer.Controllers
 			}
 			user.Name=userEditViewModel.Name;
 			user.Surname=userEditViewModel.Surname;
+			if (userEditViewModel.PasswordConfirm == userEditViewModel.Password)
+			{
+				user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, userEditViewModel.Password);
+			}
+			else
+			{
+				return View();
+			}
 			var result = await _userManager.UpdateAsync(user);
 			if (result.Succeeded)
 			{
-				return RedirectToAction("Index","Default");
+				return RedirectToAction("Index", "Dashboard");
 			}
 			return View();
 		}

@@ -11,9 +11,6 @@ namespace Core_Proje.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            ViewBag.v1 = "Edit";
-            ViewBag.v2 = "About";
-            ViewBag.v3 = "AboutPage";
             var values = _aboutManager.TGetByID(3);
             return View(values);
         }
@@ -25,6 +22,11 @@ namespace Core_Proje.Controllers
             _aboutManager.TUpdate(about);
             return RedirectToAction("Index", "Default");
 
+        }
+
+        public IActionResult About()
+        {
+            return View();
         }
     }
 }

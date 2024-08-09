@@ -1,7 +1,7 @@
 ﻿@model EntityLayer.Concrete.About
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
 <div class="col-xl-8 order-xl-1">
@@ -57,10 +57,10 @@
                                 @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control", @placeholder = "ImageUrl" })
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="form-control-label" for="input-value">Description</label>
-                                @Html.TextAreaFor(x => x.Description, 10, 2, new { @class = "form-control", @placeholder = "Description" })
+                                @Html.TextAreaFor(x => x.Description, 5, 2, new { @class = "form-control", @placeholder = "Description" })
                             </div>
                         </div>
                         <div class="col-lg-12">
@@ -73,4 +73,3 @@
         </div>
     </div>
 </div>
-
