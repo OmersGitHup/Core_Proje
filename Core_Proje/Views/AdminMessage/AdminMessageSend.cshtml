@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Concrete.WriterMessage
+@{
+	ViewData["Title"] = "AdminMessageSend";
+	Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+}
+
+<div class="col-12 grid-margin stretch-card">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Create New Message</h4>
+
+			<form class="forms-sample" method="post">
+				<div class="form-group">
+					<label>Title</label>
+					<input type="text" class="form-control" asp-for="Subject" placeholder="Title">
+				</div>
+				<div class="form-group">
+					<label>Receiver</label>
+					<input type="text" class="form-control" asp-for="Receiver" placeholder="Title">
+				</div>
+				<div class="form-group">
+					<label>Content</label>
+					<textarea class="form-control" asp-for="MessageContent" placeholder="Title" rows="4" cols="10"></textarea>
+				</div>
+
+
+				<button type="submit" class="btn btn-primary mr-2">Submit</button>
+				<a class="btn btn-dark" onclick="history.back()">Cancel</a>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,39 @@
+﻿ @model EntityLayer.Concrete.Message
+@{
+	ViewData["Title"] = "ContactDetail";
+	Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+
+<div class="col-12 grid-margin stretch-card">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Edit Experience</h4>
+			@*   <p class="card-description"> @ViewBag.v2 </p> *@
+			<form class="forms-sample">
+				@Html.HiddenFor(x => x.MessageID)
+
+				<div class="form-group">
+					<label>Name</label>
+					<input type="text" class="form-control" id="exampleInputName1" asp-for="Name" placeholder="Name">
+				</div>
+				<div class="form-group">
+					<label>Mail</label>
+					<input type="text" class="form-control" id="exampleInputName1" asp-for="Mail" placeholder="Name">
+				</div>
+				<div class="form-group">
+					<label>Date</label>
+					<input type="text" class="form-control" id="datepicker" asp-for="Date" placeholder="dd/mm/yyyy">
+				</div>
+
+				<div class="form-group">
+					<label>Description</label>
+					<textarea class="form-control" name="Description" asp-for="Content" rows="6"></textarea>
+				</div>
+				
+				<a class="btn btn-dark" href="/Contact/Index/">Back</a>
+			</form>
+
+		</div>
+	</div>
+</div>
