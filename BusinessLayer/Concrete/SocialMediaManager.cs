@@ -20,12 +20,12 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(SocialMedia t)
         {
-            throw new NotImplementedException();
+            _socialMediaDal.Insert(t);
         }
 
         public void TDelete(SocialMedia t)
         {
-            throw new NotImplementedException();
+            _socialMediaDal.Delete(t);
         }
 
         public SocialMedia TGetByID(int id)

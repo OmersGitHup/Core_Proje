@@ -11,7 +11,7 @@ namespace Core_Proje.Controllers
         public IActionResult Index()
         {
             var values = socialMediaManager.TGetList();
-            return View();
+            return View(values);
         }
         [HttpGet]
         public IActionResult AddSocialMedia()
@@ -21,6 +21,7 @@ namespace Core_Proje.Controllers
         [HttpPost]
         public IActionResult AddSocialMedia(SocialMedia socialMedia)
         {
+            socialMedia.Status = true;
             socialMediaManager.TAdd(socialMedia);
             return RedirectToAction("Index");
         }
