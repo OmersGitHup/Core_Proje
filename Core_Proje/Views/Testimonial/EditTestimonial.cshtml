@@ -1,8 +1,49 @@
-﻿
+﻿@model EntityLayer.Concrete.Testimonial
 @{
     ViewData["Title"] = "EditTestimonial";
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<h1>EditTestimonial</h1>
+
+@using (Html.BeginForm("EditTestimonial", "Testimonial", FormMethod.Post))
+{
+
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Edit Testimonials</h4>
+                @* <p class="card-description"> @ViewBag.v2 </p> *@
+                <form class="forms-sample">
+                    @Html.HiddenFor(x => x.TestimonialID)
+                    <div class="form-group">
+                        <label>Name Surname</label>
+                        <input type="text" class="form-control" id="exampleInputName1" asp-for="ClientName" placeholder="ClientName">
+                    </div>
+                    <div class="form-group">
+                        <label>Image Url</label>
+                        <input type="text" class="form-control" id="exampleInputName1" asp-for="ImageUrl" placeholder="ImageUrl">
+                    </div>
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control" id="exampleInputName1" asp-for="Title" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                        <label>Company</label>
+                        <input type="text" class="form-control" id="exampleInputName1" asp-for="Company" placeholder="Company">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Comment</label>
+                        <textarea type="text" class="form-control" asp-for="Comment" rows="6"></textarea>
+                    </div>
+
+                    
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <a class="btn btn-dark" href="/Testimonial/Index/">Cancel</a>
+                </form>
+
+            </div>
+        </div>
+    </div>
+}
 
