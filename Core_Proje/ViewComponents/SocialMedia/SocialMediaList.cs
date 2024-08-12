@@ -1,12 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Proje.ViewComponents.SocialMedia
 {
 	public class SocialMediaList:ViewComponent
 	{
+		SocialMediaManager socialMediaManager = new SocialMediaManager(new EfSocialMediaDal());
 		public IViewComponentResult Invoke()
 		{
-			return View();
+			var values=socialMediaManager.TGetList();
+			return View(values);
 		}
 	}
 }
