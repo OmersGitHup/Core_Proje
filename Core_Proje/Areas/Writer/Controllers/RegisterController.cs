@@ -1,10 +1,12 @@
 ﻿using Core_Proje.Areas.Writer.Models;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Proje.Areas.Writer.Controllers
 {
+    [AllowAnonymous]
     [Area("Writer")]
 	[Route("Writer/[controller]/[action]")]
 	public class RegisterController : Controller
@@ -45,7 +47,7 @@ namespace Core_Proje.Areas.Writer.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index","Dashboard");
+                    return RedirectToAction("Index","Login");
                 }
                 else
                 {
