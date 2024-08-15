@@ -35,9 +35,9 @@ namespace Core_Proje.Areas.Writer.Controllers
                 Surname = userRegisterViewModel.Surname,
                 Email = userRegisterViewModel.Email,
                 UserName = userRegisterViewModel.UserName,
-                ImageURL = userRegisterViewModel.Image
+                ImageURL = "/../../../../../../../../ömer faruk/documents/m/yazılım/orta seviye projelerim/core_proje/core_proje/wwwroot/userimage/png_user_picture.png"
 
-            };
+			};
             if (userRegisterViewModel.ConfirmPassword == userRegisterViewModel.Password)
             {
                 var result = await _userManager.CreateAsync(w, userRegisterViewModel.Password);

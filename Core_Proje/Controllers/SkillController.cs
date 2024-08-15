@@ -1,13 +1,16 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Proje.Controllers
 {
-	public class SkillController : Controller
+    [Authorize(Roles = "Admin")]
+    public class SkillController : Controller
 	{
-		SkillManager _skillManager = new SkillManager(new EfSkillDal());
+        
+        SkillManager _skillManager = new SkillManager(new EfSkillDal());
 		public IActionResult Index()
 		{
 			var values = _skillManager.TGetList();

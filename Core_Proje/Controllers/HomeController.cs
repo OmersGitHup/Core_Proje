@@ -1,11 +1,14 @@
 using Core_Proje.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace Core_Proje.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class HomeController : Controller
     {
+        
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)

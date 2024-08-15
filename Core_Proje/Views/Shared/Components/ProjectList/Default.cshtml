@@ -15,7 +15,7 @@
 								<th> URL </th>
 								<th> Cost </th>
 								<th> Completed Percentage </th>
-								<th> Status </th>
+								<th> Detail </th>
 							</tr>
 						</thead>
 						<tbody>
@@ -33,7 +33,7 @@
 									<td> @item.Price </td>
 									<td> @item.Value% </td>
 									<td>
-										<div class="badge badge-outline-success">Approved</div>
+										<a href="/Portfolio/EditPortfolio/@item.PortfolioID"><div class="badge badge-outline-success">See Details</div></a>
 									</td>
 								</tr>
 							}

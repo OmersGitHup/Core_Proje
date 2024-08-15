@@ -3,13 +3,16 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Proje.Controllers
 {
-	public class PortfolioController : Controller
+    [Authorize(Roles = "Admin")]
+    public class PortfolioController : Controller
 	{
-		PortfolioManager portfolioManager = new PortfolioManager(new EfPortfolioDal());
+        
+        PortfolioManager portfolioManager = new PortfolioManager(new EfPortfolioDal());
 		public IActionResult Index()
 		{
             var values = portfolioManager.TGetList();

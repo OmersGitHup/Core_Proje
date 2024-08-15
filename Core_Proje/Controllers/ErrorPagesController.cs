@@ -1,12 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Proje.Controllers
 {
-	public class ErrorPagesController : Controller
+    [Authorize(Roles = "Admin")]
+    public class ErrorPagesController : Controller
 	{
 		public IActionResult Index()
 		{
 			return View();
 		}
-	}
+        public IActionResult Error404()
+        {
+            return View();
+        }
+    }
 }
